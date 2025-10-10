@@ -1,0 +1,22 @@
+<table class="sensor-table">
+    <thead>
+        <tr>
+            <th>Local</th> 
+            <th>Temperatura</th>
+            <th>Limite de Temperatura</th>
+            <th>Humidade</th>
+            <th>Limite de Humidade</th>
+            <th>Data do alerta</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sensor of sensores">
+            <td>{{ sensor.state }}</td>
+            <td>{{ sensor.temperature }}</td>
+            <td>{{ sensor.temperatureLimit }}</td>
+            <td>{{ sensor.humidity }}</td>
+            <td>{{ sensor.humidityLimit }}</td>
+            <td>{{ sensor.alertDate }}</td>
+        </tr>
+    </tbody>
+</table>
