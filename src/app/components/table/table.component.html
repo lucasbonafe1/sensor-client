@@ -3,9 +3,13 @@
         <tr>
             <th>Local</th> 
             <th>Temperatura</th>
-            <th>Limite de Temperatura</th>
+            <th>Máx Temperatura</th>
             <th>Humidade</th>
-            <th>Limite de Humidade</th>
+            <th>Máx Humidade</th>
+            <th>Vento</th>
+            <th>Máx Vento</th>
+            <th>Precipitação</th>
+            <th>Máx Precipitação</th>
             <th>Data do alerta</th>
         </tr>
     </thead>
@@ -13,9 +17,13 @@
         <tr *ngFor="let sensor of sensores">
             <td>{{ sensor.state }}</td>
             <td>{{ sensor.temperature }}</td>
-            <td>{{ sensor.temperatureLimit }}</td>
+            <td>{{ sensor.maxTemperature }}</td>
             <td>{{ sensor.humidity }}</td>
-            <td>{{ sensor.humidityLimit }}</td>
+            <td>{{ sensor.maxHumidity }}</td>
+            <td>{{ sensor.wind }}</td>
+            <td>{{ sensor.maxWind }}</td>
+            <td>{{ sensor.precipitation }}</td>
+            <td>{{ sensor.maxPrecipitation }}</td>
             <td>{{ sensor.alertDate }}</td>
         </tr>
     </tbody>
