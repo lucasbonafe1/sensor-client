@@ -5,7 +5,9 @@ import { map } from 'rxjs/operators';
 import { SensorData } from '../models/sensor-data';
 import { environment } from '../../environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root' 
+})
 export class SensorDataService {
   getUrl() : string{
     return environment.SENSOR_API_BASE_URL;
@@ -20,7 +22,7 @@ export class SensorDataService {
   }
 
   getSensorByState(state: string): Observable<SensorData> {
-    return this.http.get<any>(state).pipe(
+    return this.http.get<any>(`${this.getUrl()}/${state}`).pipe(
       map(data => new SensorData(data))
     );
   }
