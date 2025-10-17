@@ -1,5 +1,8 @@
 <div class="search-bar">
-  <input type="text" class="search-bar-txt" #valor placeholder="Buscar..."/>
-  <span class="material-icons search-bar-btn" (click)="searchSensor(valor.value)">search</span>
+  <input type="text" class="search-bar-txt" #valor placeholder="Pesquisar.."/>
+
+  <button type="button" class="search-bar-btn" (click)="searchSensor(valor.value)">
+    <span class="material-icons">search</span>
+  </button>
 </div>
 

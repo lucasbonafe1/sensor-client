@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --color-primary: #324958;
+  --color-secondary: #34484e;
+  --color-bg: #f4f8fb;
+  --color-hover: #1e3333;
+}
+
+html, body, app-root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(100deg,rgb(38, 94, 116) 0%, #34484e 65%, rgb(69, 98, 121) 100%);
+}
+
+.container {
+  min-height: 100vh;     
+  display: flex;
+  align-items: center;    
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}

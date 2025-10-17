@@ -1,12 +1,5 @@
-<div class="home-container">
+<div class="container-home">  
   <h1 class="welcome-title">Temperature Monitor</h1>
-  <p class="subtitle">Input the locality who'u wants to search:</p>
-  <input 
-    type="text" 
-    class="state-input" 
-    placeholder="Ex: São Paulo, Atlanta, New York..." 
-    [(ngModel)]="sensorState"
-  />
-  <button class="search-btn" (click)="onSearch(sensorState)">Search</button>
+  <p class="subtitle">Consulte pelo nome da localidade</p>
+  <search-bar></search-bar>
 </div>
-
