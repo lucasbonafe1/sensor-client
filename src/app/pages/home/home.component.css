@@ -1,17 +1,67 @@
 .container-home {
+  gap: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 75vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.title-wrapper {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  margin-bottom: 8px;
 }
 
 .welcome-title {
+  margin: 0;
+  line-height: 1;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  gap: 12px;
+  font-size: 2.8rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.title-monitor {
   color: var(--color-bg);
-  font-size: 3.5rem;
-  margin-bottom: 12px;
+  padding: 6px;
+  box-shadow: 0 6px 18px rgba(47,79,79,0.08);
+}
+
+.title-temp {
+  font-weight: 900;
+  background: var(--color-temperature);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-transform: none;
+  padding-right: 5px;
 }
 
 .subtitle {
-  color: var(--color-bg);
+  color: rgba(255,255,255,0.85);
+  margin-top: 6px;
+  font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  .title-monitor { 
+    font-size: 1.2rem; 
+    padding: 4px 8px; 
+  }
+  .title-temp { 
+    font-size: 1.6rem; 
+  }
+  .welcome-title { 
+    gap: 6px; 
+  }
 }

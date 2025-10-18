@@ -1,19 +1,19 @@
 .search-bar{
   background-color:#ffffff;
-  border:solid 2px var(--color-primary);
-  border-radius:5px;
-  width:300px;
+  border: solid 2px var(--color-primary);
+  border-radius: 5px;
+  width: 300px;
 }
 
 .search-bar-txt{
-  float:left;
+  float: left;
   color: var(--color-primary);
   background-color:transparent;
   padding-left: 10px;
   font-size:13px;
-  border:none;
-  height:32px;
-  width:260px;
+  border: none;
+  height: 32px;
+  width: 260px;
 }
 
 .search-bar-txt:focus {

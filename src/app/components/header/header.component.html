@@ -1,0 +1,11 @@
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <img src="favicon.ico" alt="logo" class="logo"/>
+
+    <nav class="nav" [class.open]="menuOpen" aria-label="primary navigation">
+      <a routerLink="/" (click)="menuOpen = false">Início</a>
+      <a routerLink="/alerts" (click)="menuOpen = false">Alertas</a>
+      <a routerLink="/about" (click)="menuOpen = false">Sobre</a>
+    </nav>
+  </div>
+</header>
