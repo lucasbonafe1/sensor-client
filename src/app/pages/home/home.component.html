@@ -8,5 +8,7 @@
   <p class="subtitle">Obtenha informações meteorológicas precisas e atualizadas para qualquer localidade do mundo</p>
   <search-bar (weatherFound)="onWeatherFound($event)"></search-bar>
 
-  <modal-weather-data [weather]="weather"></modal-weather-data>
+  <div class="container-condition">
+    <modal-weather-data [weather]="weather"></modal-weather-data>
+  </div>
 </div>
