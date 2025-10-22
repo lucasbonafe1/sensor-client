@@ -6,5 +6,7 @@
     </h1>
   </div>
   <p class="subtitle">Obtenha informações meteorológicas precisas e atualizadas para qualquer localidade do mundo</p>
-  <search-bar></search-bar>
+  <search-bar (weatherFound)="onWeatherFound($event)"></search-bar>
+
+  <modal-weather-data [weather]="weather"></modal-weather-data>
 </div>

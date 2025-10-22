@@ -1,0 +1,8 @@
+<div *ngIf="weather">
+    <img src="{{ weather.current.condition.icon }}" alt="condition icon"/>
+    <h3>{{ weather.location.name }} - {{ weather.location.region }}</h3>
+    <p>Temperatura: {{ weather.current.temp_c }}°C</p>
+    <p>Vento: {{ weather.current.wind_mph }}mph</p>
+    <p>Chuva: {{ weather.current.precip_mm }}mm</p>
+    <p>Umidade: {{ weather.current.humidity }}%</p>
+</div>

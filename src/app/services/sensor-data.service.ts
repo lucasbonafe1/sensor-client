@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SensorData } from '../models/sensor-data';
 import { environment } from '../../environments/environment';
+import { WeatherData } from '../models/weather-data';
 
 @Injectable({
   providedIn: 'root' 
@@ -27,9 +28,9 @@ export class SensorDataService {
     );
   }
 
-  getWeatherDataByState(state: string, days: number): Observable<SensorData> {
+  getWeatherDataByState(state: string, days: number): Observable<WeatherData> {
     return this.http.get<any>(`${this.getUrl()}/weather-data?state=${state}&days=${days}`).pipe(
-      map(data => new SensorData(data))
+      map(data => new WeatherData(data))
     );
   }
 

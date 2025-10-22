@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { SensorDataService } from '../../services/sensor-data.service';
+import { WeatherData } from '../../models/weather-data';
 
 @Component({
   selector: 'search-bar',
@@ -11,11 +12,11 @@ import { SensorDataService } from '../../services/sensor-data.service';
 export class SearchBarComponent {
   constructor(private sensorService: SensorDataService) { }
 
-  searchSensor(state: string) {
-    var returnSensor = this.sensorService.getSensorByState(state)
+   @Output() weatherFound = new EventEmitter<WeatherData>();
 
-    returnSensor.subscribe(data => {
-      console.log(data);
+  searchSensor(state: string) {
+    this.sensorService.getWeatherDataByState(state, 1).subscribe(data => {
+      this.weatherFound.emit(data);
     });
   }
 }
