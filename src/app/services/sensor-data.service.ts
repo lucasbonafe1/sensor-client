@@ -16,19 +16,25 @@ export class SensorDataService {
   constructor(private http: HttpClient) {}
 
   getSensors(): Observable<SensorData[]> {
-    return this.http.get<any[]>(this.getUrl()).pipe(
+    return this.http.get<any[]>(`${this.getUrl()}/alerts`).pipe(
       map(dataArray => dataArray.map(data => new SensorData(data)))
     );
   }
 
   getSensorByState(state: string): Observable<SensorData> {
-    return this.http.get<any>(`${this.getUrl()}/${state}`).pipe(
+    return this.http.get<any>(`${this.getUrl()}/alert/${state}`).pipe(
+      map(data => new SensorData(data))
+    );
+  }
+
+  getWeatherDataByState(state: string, days: number): Observable<SensorData> {
+    return this.http.get<any>(`${this.getUrl()}/weather-data?state=${state}&days=${days}`).pipe(
       map(data => new SensorData(data))
     );
   }
 
   createSensorForecast(state: string, days: number): Observable<SensorData> {
-    return this.http.post<any>(`${this.getUrl()}?state=${state}&days=${days}`, null).pipe(
+    return this.http.post<any>(`${this.getUrl()}/alert/verify?state=${state}&days=${days}`, null).pipe(
       map(data => new SensorData(data))
     );
   }

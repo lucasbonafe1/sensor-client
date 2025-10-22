@@ -2,10 +2,10 @@
   <div class="header-inner">
     <img src="favicon.ico" alt="logo" class="logo"/>
 
-    <nav class="nav" [class.open]="menuOpen" aria-label="primary navigation">
-      <a routerLink="/" (click)="menuOpen = false">Início</a>
-      <a routerLink="/alerts" (click)="menuOpen = false">Alertas</a>
-      <a routerLink="/about" (click)="menuOpen = false">Sobre</a>
+    <nav class="nav" aria-label="primary navigation">
+      <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Início</a>
+      <a routerLink="/alerts" routerLinkActive="active" ariaCurrentWhenActive="page">Alertas</a>
+      <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">Sobre</a>
     </nav>
   </div>
 </header>
