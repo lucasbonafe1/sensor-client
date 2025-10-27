@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SensorDataService } from '../../services/sensor-data.service';
 import { SensorData } from '../../models/sensor-data';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'table-component',
@@ -11,11 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  sensores: SensorData[] = [];
+  @Input() alerts!: SensorData[];
 
-  constructor(private sensorService: SensorDataService) {
-    this.sensorService.getSensors().subscribe(data => {
-      this.sensores = data;
-    });
+  dateFormatConverter(date: Date): string {
+    const datepipe: DatePipe = new DatePipe('pt-BR')
+    let formattedDate = datepipe.transform(date, 'dd/MM/yyyy HH:mm:ss')
+    return formattedDate ?? '';
   }
 }

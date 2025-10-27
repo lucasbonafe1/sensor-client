@@ -1,7 +1,7 @@
 <table class="sensor-table">
     <thead>
         <tr>
-            <th>Local</th> 
+            <th>Localidade</th> 
             <th>Temperatura</th>
             <th>Máx Temperatura</th>
             <th>Humidade</th>
@@ -10,21 +10,21 @@
             <th>Máx Vento</th>
             <th>Precipitação</th>
             <th>Máx Precipitação</th>
-            <th>Data do alerta</th>
+            <th>Data</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let sensor of sensores">
+        <tr *ngFor="let sensor of alerts">
             <td>{{ sensor.state }}</td>
             <td>{{ sensor.temperature }}</td>
-            <td>{{ sensor.maxTemperature }}</td>
+            <td>{{ sensor.maxTemperature || "-"}}</td>
             <td>{{ sensor.humidity }}</td>
-            <td>{{ sensor.maxHumidity }}</td>
+            <td>{{ sensor.maxHumidity || "-"}}</td>
             <td>{{ sensor.wind }}</td>
-            <td>{{ sensor.maxWind }}</td>
+            <td>{{ sensor.maxWind || "-"}}</td>
             <td>{{ sensor.precipitation }}</td>
-            <td>{{ sensor.maxPrecipitation }}</td>
-            <td>{{ sensor.alertDate }}</td>
+            <td>{{ sensor.maxPrecipitation || "-"}}</td>
+            <td>{{ dateFormatConverter(sensor.alertDate) }}</td>
         </tr>
     </tbody>
 </table>
