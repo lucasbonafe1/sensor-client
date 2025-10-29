@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from "../../components/search-bar/search-bar.component";
 import { ModalWeatherDataComponent } from '../../components/modal-weather-data/modal-weather-data.component';
 import { WeatherData } from '../../models/weather-data';
+import { SensorDataService } from '../../services/sensor-data.service';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,13 @@ import { WeatherData } from '../../models/weather-data';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  weather?: WeatherData;
+  weather!: WeatherData;
 
-  onWeatherFound(data: WeatherData) {
-    this.weather = data; // armazena o resultado vindo do search-bar
+  constructor(private sensorService: SensorDataService) {}
+
+  searchSensor(state: string) {
+    this.sensorService.getWeatherDataByState(state, 1).subscribe(data => {
+      this.weather = data;
+    });
   }
 }

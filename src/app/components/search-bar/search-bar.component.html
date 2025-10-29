@@ -1,7 +1,7 @@
 <div class="search-bar">
-  <input type="text" class="search-bar-txt" #valor placeholder="Pesquisar.."/>
+  <input type="text" class="search-bar-txt" #valor placeholder="Pesquisar.." (keyup.enter)="onSearch(valor.value)"/>
 
-  <button type="button" class="search-bar-btn" (click)="searchSensor(valor.value)">
+  <button type="button" class="search-bar-btn" (click)="onSearch(valor.value)">
     <span class="material-icons">search</span>
   </button>
 </div>

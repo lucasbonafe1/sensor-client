@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 import { SensorDataService } from '../../services/sensor-data.service';
 import { WeatherData } from '../../models/weather-data';
 
@@ -10,13 +10,10 @@ import { WeatherData } from '../../models/weather-data';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent {
-  constructor(private sensorService: SensorDataService) { }
+  @Output() search = new EventEmitter<string>();
 
-   @Output() weatherFound = new EventEmitter<WeatherData>();
-
-  searchSensor(state: string) {
-    this.sensorService.getWeatherDataByState(state, 1).subscribe(data => {
-      this.weatherFound.emit(data);
-    });
+  onSearch(value: string) {
+    const val = value ?? '';
+    this.search.emit(val);
   }
 }
