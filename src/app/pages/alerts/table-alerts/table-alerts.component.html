@@ -1,2 +1,7 @@
-<search-bar (search)="search($event)"></search-bar>
+<div class="table-alerts-header">
+    <search-bar (search)="search($event)"></search-bar>
+    <button type="button" class="reload-btn" (click)="loadAlerts()">
+        <span class="material-icons">cached</span>
+    </button>
+</div>
 <table-component [alerts]="sensors"></table-component>

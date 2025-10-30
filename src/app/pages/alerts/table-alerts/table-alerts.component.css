@@ -1,0 +1,29 @@
+.table-alerts-header{
+    background: #2F4F4F;
+    border-radius: 2%;
+    padding: 0.5%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1%;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.reload-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;      
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  user-select: none;
+}
+
+.reload-btn .material-icons {
+  font-size: 25px;
+  color: var(--color-bg);
+  pointer-events: none; 
+}

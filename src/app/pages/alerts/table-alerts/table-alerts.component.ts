@@ -27,7 +27,7 @@ export class TableAlertsComponent {
 
   search(state: string) {
     var sensorsSearched = new Array<SensorData>();
-    console.log("estado:", state);
+    
     if(state.length === 0){
       this.loadAlerts();
       return;

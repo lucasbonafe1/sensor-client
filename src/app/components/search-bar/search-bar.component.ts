@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Input, input, Output } from '@angular/core';
-import { SensorDataService } from '../../services/sensor-data.service';
-import { WeatherData } from '../../models/weather-data';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'search-bar',
