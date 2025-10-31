@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { SensorDataService } from '../../services/sensor-data.service';
 import { SensorData } from '../../models/sensor-data';
 import { CommonModule, DatePipe } from '@angular/common';
 

@@ -13,7 +13,10 @@
             <th>Data</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody>   
+        <tr *ngIf="alerts.length === 0">            
+            <td colspan="10" class="no-data-cell">Nenhum alerta encontrado</td>            
+        </tr>
         <tr *ngFor="let sensor of alerts">
             <td>{{ sensor.state }}</td>
             <td>{{ sensor.temperature }}</td>

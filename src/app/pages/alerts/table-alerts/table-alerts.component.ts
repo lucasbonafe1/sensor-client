@@ -12,13 +12,16 @@ import { SearchBarComponent } from '../../../components/search-bar/search-bar.co
 })
 export class TableAlertsComponent {
   sensors!: SensorData[];
+  sensorsAux!: SensorData[];
 
   constructor(private sensorService: SensorDataService) {}
 
   loadAlerts() : void {
     this.sensorService.getSensors().subscribe(data => {
-        this.sensors = data;
+        this.sensorsAux = data;
     });
+
+    this.sensors = this.sensorsAux;
   }
 
   ngOnInit() {
@@ -26,19 +29,17 @@ export class TableAlertsComponent {
   }
 
   search(state: string) {
-    var sensorsSearched = new Array<SensorData>();
-    
+    this.sensors = [];
+
     if(state.length === 0){
-      this.loadAlerts();
+      this.sensors = this.sensorsAux;
       return;
     }
 
-    this.sensors.filter(sensor => {
-      if(sensor.state.includes(state)){
-        sensorsSearched.push(sensor);
+    this.sensorsAux.filter(sensor => {
+      if(sensor.state.toLowerCase().includes(state.toLowerCase())){
+        this.sensors.push(sensor);
       }
     });
-
-    this.sensors = sensorsSearched;
   }
 }
