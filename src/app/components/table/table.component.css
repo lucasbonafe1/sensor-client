@@ -1,5 +1,5 @@
 .sensor-table {
-  width: 100%;
+  width: 77.7rem;
   border-collapse: collapse;
   background-color: #f8f8f8;
 }
@@ -15,6 +15,10 @@
   border: 1px solid #2F4F4F;
   padding: 8px 12px;
   text-align: center;
+}
+
+.table-body{
+  height: 35rem;
 }
 
 .sensor-table th {
